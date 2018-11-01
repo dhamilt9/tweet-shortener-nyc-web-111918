@@ -20,5 +20,3 @@ def word_substituter(tweet, dict=dictionary)
     end
     output.join(" ")
 end
-
-word_substituter("this is a test")
