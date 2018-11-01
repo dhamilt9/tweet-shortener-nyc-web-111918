@@ -3,7 +3,7 @@ def dictionary
   return output
 end
 
-def word_substituter(tweet, dict=dictionary)
+def word_substituter(tweet)
     output=[]
     tweet.split(" ").collect do |x|
         replace=false
@@ -19,4 +19,10 @@ def word_substituter(tweet, dict=dictionary)
         end
     end
     output.join(" ")
+end
+
+def bulk_tweet_shortener(array)
+  array.each do |x|
+    puts word_substituter(x)
+  end
 end
