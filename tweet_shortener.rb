@@ -4,12 +4,21 @@ def dictionary
 end
 
 def word_substituter(tweet, dict=dictionary)
-  
-  tweet.split(" ").each do |x|
-    x.collect do |y|
-      puts y
+    output=[]
+    tweet.split(" ").collect do |x|
+        replace=false
+        dictionary.keys.each do |longwords|
+            if longwords.include?(x)
+                replace=dictionary[longwords]
+            end
+        end
+        if replace==false
+            output.push(x)
+        else
+            output.push(replace)
+        end
     end
-  end
+    output.join(" ")
 end
 
 word_substituter("this is a test")
