@@ -8,7 +8,7 @@ def word_substituter(tweet)
     tweet.split(" ").collect do |x|
         replace=false
         dictionary.keys.each do |longwords|
-            if longwords.include?(x)
+            if longwords.include?(x.downcase)
                 replace=dictionary[longwords]
             end
         end
